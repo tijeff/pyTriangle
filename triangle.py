@@ -33,3 +33,7 @@ class triangle:
         :return: le texte décrivant le triangle
         """
         return "Triangle: %s, %s, %s" % (self._a, self._b, self._c)
+
+    # ------------------------------------------------------------------------------------------------------------------
+    def isIsocele(self):
+        return self._a == self._b or self._a == self._c
