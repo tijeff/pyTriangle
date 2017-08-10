@@ -20,6 +20,16 @@ class TestUM(unittest.TestCase):
         self.assertEqual('Triangle: 3, 4, 5', "%s" % test_triangle)
 
 
+    # ------------------------------------------------------------------------------------------------------------------
+    def test_isocele(self):
+        test_triangle = triangle.triangle(3, 4, 3)
+        self.assertTrue(test_triangle.isIsocele())
+
+    # ------------------------------------------------------------------------------------------------------------------
+    def test_isocele_text(self):
+        test_triangle = triangle.triangle(3, 4, 3)
+        self.assertEqual(r"Triangle: 3, 4, 3 ISOCELE", test_triangle.__str__())
+
 # ----------------------------------------------------------------------------------------------------------------------
 if __name__ == '__main__':
     unittest.main()
