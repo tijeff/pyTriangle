@@ -21,9 +21,7 @@ class triangle:
         :param b: int
         :param c: int
         """
-        self._a = a
-        self._b = b
-        self._c = c
+        self._cote = (a, b, c)
 
     # ------------------------------------------------------------------------------------------------------------------
     def __str__(self):
@@ -32,4 +30,4 @@ class triangle:
         :rtype: str
         :return: le texte décrivant le triangle
         """
-        return "Triangle: %s, %s, %s" % (self._a, self._b, self._c)
+        return "Triangle: %s, %s, %s" % (self._cote[0], self._cote[1], self._cote[2])
