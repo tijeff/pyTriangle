@@ -32,8 +32,13 @@ class triangle:
         :rtype: str
         :return: le texte décrivant le triangle
         """
-        return "Triangle: %s, %s, %s%s" % (self._a, self._b, self._c, " ISOCELE" if self.isIsocele() else "")
+        return "Triangle: %s, %s, %s%s" % (
+        self._a, self._b, self._c, " EQUILATERAL" if self.isEquilateral() else " ISOCELE" if self.isIsocele() else "")
 
     # ------------------------------------------------------------------------------------------------------------------
     def isIsocele(self):
         return self._a == self._b or self._a == self._c
+
+    # ------------------------------------------------------------------------------------------------------------------
+    def isEquilateral(self):
+        return self._a == self._b and self._b == self._c
