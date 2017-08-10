@@ -34,6 +34,11 @@ class TestUM(unittest.TestCase):
         test_triangle = triangle.triangle(2, 2, 2)
         self.assertTrue(test_triangle.isEquilateral())
 
+    # ------------------------------------------------------------------------------------------------------------------
+    def test_equilateral_text(self):
+        test_triangle = triangle.triangle(2, 2, 2)
+        self.assertEqual(r"Triangle: 2, 2, 2 EQUILATERAL", test_triangle.__str__())
+
 # ----------------------------------------------------------------------------------------------------------------------
 if __name__ == '__main__':
     unittest.main()
