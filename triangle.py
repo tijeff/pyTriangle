@@ -30,8 +30,17 @@ class triangle:
         :rtype: str
         :return: le texte décrivant le triangle
         """
-        return "Triangle: %s, %s, %s" % (self._cote[0], self._cote[1], self._cote[2])
+        return "Triangle: %s, %s, %s%s" % (self._cote[0], self._cote[1], self._cote[2],
+                                         " EQUILATERAL" if self.isEquilateral() else " ISOCELE" if self.isIsocele() else "")
 
     # ------------------------------------------------------------------------------------------------------------------
     def perimetre(self):
         return reduce(lambda x, y: x + y, self._cote)
+
+    # ------------------------------------------------------------------------------------------------------------------
+    def isIsocele(self):
+        return self._cote.count(self._cote[0]) == 2 or self._cote.count(self._cote[1]) == 2
+
+    # ------------------------------------------------------------------------------------------------------------------
+    def isEquilateral(self):
+        return self._cote.count(self._cote[0]) == 3
