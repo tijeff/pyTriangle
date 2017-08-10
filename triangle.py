@@ -31,3 +31,7 @@ class triangle:
         :return: le texte décrivant le triangle
         """
         return "Triangle: %s, %s, %s" % (self._cote[0], self._cote[1], self._cote[2])
+
+    # ------------------------------------------------------------------------------------------------------------------
+    def perimetre(self):
+        return reduce(lambda x, y: x + y, self._cote)

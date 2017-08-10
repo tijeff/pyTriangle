@@ -19,6 +19,10 @@ class TestUM(unittest.TestCase):
         test_triangle = triangle.triangle(3, 4, 5)
         self.assertEqual('Triangle: 3, 4, 5', "%s" % test_triangle)
 
+    # ------------------------------------------------------------------------------------------------------------------
+    def test_perimetre(self):
+        test_triangle = triangle.triangle(3, 4, 5)
+        self.assertEqual(3 + 4 + 5, test_triangle.perimetre())
 
 # ----------------------------------------------------------------------------------------------------------------------
 if __name__ == '__main__':
