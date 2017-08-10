@@ -21,9 +21,7 @@ class triangle:
         :param b: int
         :param c: int
         """
-        self._a = a
-        self._b = b
-        self._c = c
+        self._cote = (a, b, c)
 
     # ------------------------------------------------------------------------------------------------------------------
     def __str__(self):
@@ -32,13 +30,17 @@ class triangle:
         :rtype: str
         :return: le texte décrivant le triangle
         """
-        return "Triangle: %s, %s, %s%s" % (
-        self._a, self._b, self._c, " EQUILATERAL" if self.isEquilateral() else " ISOCELE" if self.isIsocele() else "")
+        return "Triangle: %s, %s, %s%s" % (self._cote[0], self._cote[1], self._cote[2],
+                                         " EQUILATERAL" if self.isEquilateral() else " ISOCELE" if self.isIsocele() else "")
+
+    # ------------------------------------------------------------------------------------------------------------------
+    def perimetre(self):
+        return reduce(lambda x, y: x + y, self._cote)
 
     # ------------------------------------------------------------------------------------------------------------------
     def isIsocele(self):
-        return self._a == self._b or self._a == self._c
+        return self._cote.count(self._cote[0]) == 2 or self._cote.count(self._cote[1]) == 2
 
     # ------------------------------------------------------------------------------------------------------------------
     def isEquilateral(self):
-        return self._a == self._b and self._b == self._c
+        return self._cote.count(self._cote[0]) == 3
