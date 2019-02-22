@@ -1,4 +1,4 @@
 ** Les Triangles
 
-Cette classe propose des fonctions manipulants les triangles.
+This class offers functions that manipulate triangles.
 
